@@ -3,247 +3,335 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Summit Shine Mobile Detailing</title>
-<meta name="description" content="Premium mobile auto detailing for cars, trucks, and SUVs.">
-<link rel="icon" href="images/favicon.png" type="image/png">
+
+<title>Summit Shine Auto Detailing</title>
+<meta name="description" content="Professional auto detailing with showroom-level results.">
+
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 
 <style>
 :root{
---bg:#030712;
---card:#111827;
---blue:#2563eb;
---text:#f8fafc;
---muted:#cbd5e1;
+  --bg:#030712;
+  --card:#111827;
+  --blue:#2563eb;
+  --shine:#60a5fa;
+  --text:#f8fafc;
+  --muted:#cbd5e1;
 }
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
-.container{width:min(1200px,92%);margin:auto}
-header{position:sticky;top:0;background:rgba(3,7,18,.95);backdrop-filter:blur(10px);z-index:999}
-.nav{display:flex;justify-content:space-between;align-items:center;padding:12px 0}
-.logo img{height:70px}
-nav a{color:white;text-decoration:none;margin-left:24px}
-.hero{
-min-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-padding:60px 20px;
-background:linear-gradient(rgba(3,7,18,.8),rgba(3,7,18,.9));
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
-.hero-logo{max-width:500px;width:100%;margin-bottom:25px}
-h1{font-size:clamp(2.5rem,5vw,4.5rem)}
-.hero p{max-width:700px;margin:20px auto;font-size:1.2rem;color:var(--muted)}
+
+body{
+  font-family: Arial, sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+.container{
+  width:min(1100px,92%);
+  margin:auto;
+}
+
+/* HEADER */
+header{
+  position:sticky;
+  top:0;
+  background:rgba(3,7,18,.95);
+  border-bottom:1px solid #1f2937;
+  z-index:1000;
+}
+
+.nav{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 0;
+}
+
+.logo img{
+  height:55px;
+}
+
 .btn{
-display:inline-block;
-padding:14px 28px;
-background:var(--blue);
-color:white;
-text-decoration:none;
-border-radius:999px;
-margin:10px;
-font-weight:bold;
+  display:inline-block;
+  padding:12px 22px;
+  border-radius:999px;
+  background:var(--blue);
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
 }
-section{padding:80px 0}
-.section-title{text-align:center;margin-bottom:40px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px}
+
+/* HERO */
+.hero{
+  min-height:85vh;
+  display:flex;
+  align-items:center;
+  padding:80px 20px;
+
+  background:
+    linear-gradient(90deg, rgba(3,7,18,.92) 40%, rgba(3,7,18,.55) 70%),
+    url("images/hero-banner.jpg");
+
+  background-size:cover;
+  background-position:center;
+}
+
+.hero-content{
+  max-width:650px;
+}
+
+.hero h1{
+  font-size:clamp(2.4rem,4vw,3.6rem);
+  margin-bottom:12px;
+}
+
+.hero p{
+  color:var(--muted);
+  margin-bottom:20px;
+  font-size:1.1rem;
+}
+
+/* TRUST BAR */
+.trust{
+  background:#0f172a;
+  padding:25px 0;
+}
+
+.trust-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  text-align:center;
+  gap:20px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+/* SERVICES FUNNEL */
+section{
+  padding:80px 0;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:40px;
+}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:20px;
+}
+
 .card{
-background:var(--card);
-padding:30px;
-border-radius:18px;
-box-shadow:0 10px 30px rgba(0,0,0,.25);
+  background:var(--card);
+  padding:28px;
+  border-radius:16px;
+  border:1px solid #1f2937;
 }
-.price{font-size:2rem;color:#60a5fa;margin:10px 0}
-.card ul{padding-left:20px}
-.gallery{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
+
+.price{
+  font-size:2rem;
+  color:var(--shine);
+  margin:10px 0;
 }
-.gallery div{
-height:220px;
-border:2px dashed #334155;
-border-radius:16px;
-display:flex;
-align-items:center;
-justify-content:center;
-color:#94a3b8;
+
+.highlight{
+  border:1px solid var(--blue);
+  box-shadow:0 0 25px rgba(37,99,235,.15);
 }
-.testimonials{background:#0f172a}
-.testimonial{
-background:var(--card);
-padding:25px;
-border-radius:16px;
+
+/* SOCIAL PROOF */
+.testimonials{
+  background:#0f172a;
 }
+
+.review{
+  background:var(--card);
+  padding:22px;
+  border-radius:14px;
+}
+
+/* CONVERSION SECTION */
 .contact{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:30px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:start;
 }
-input,textarea,select{
-width:100%;
-padding:14px;
-margin-bottom:12px;
-border-radius:10px;
-border:none;
+
+input, textarea, select{
+  width:100%;
+  padding:12px;
+  margin-bottom:10px;
+  border-radius:8px;
+  border:none;
+  background:#0f172a;
+  color:white;
 }
+
 button{
-padding:14px 28px;
-background:var(--blue);
-color:white;
-border:none;
-border-radius:999px;
-cursor:pointer;
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:999px;
+  background:var(--blue);
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
 }
+
 footer{
-text-align:center;
-padding:60px 20px;
-background:#020617;
+  text-align:center;
+  padding:50px 20px;
+  background:#020617;
 }
-.footer-logo{max-width:260px;width:100%;margin-bottom:20px}
-.floating-call{
-position:fixed;
-bottom:20px;
-right:20px;
-width:70px;
-height:70px;
-border-radius:50%;
-background:var(--blue);
-color:white;
-display:flex;
-align-items:center;
-justify-content:center;
-text-decoration:none;
-font-size:30px;
-}
+
 @media(max-width:768px){
-nav{display:none}
-.contact{grid-template-columns:1fr}
+  .contact{grid-template-columns:1fr;}
+  .trust-grid{grid-template-columns:1fr;}
 }
 </style>
 </head>
+
 <body>
 
 <header>
-<div class="container nav">
-<div class="logo"><img src="logo.png" alt="Summit Shine"></div>
-<nav>
-<a href="#services">Services</a>
-<a href="#gallery">Gallery</a>
-<a href="#contact">Contact</a>
-</nav>
-</div>
+  <div class="container nav">
+    <div class="logo">
+      <img src="images/logo.svg" alt="Summit Shine">
+    </div>
+    <a href="#contact" class="btn">Get Quote</a>
+  </div>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-<div>
-<img src="logo.png" class="hero-logo" alt="Summit Shine Logo">
-<h1>Premium Mobile Auto Detailing</h1>
-<p>Professional interior and exterior detailing delivered directly to your home or workplace.</p>
-<a href="#contact" class="btn">Get a Free Quote</a>
-<a href="tel:5555555555" class="btn">Call Now</a>
-</div>
+  <div class="container hero-content">
+
+    <h1>Make Your Car Look Brand New Again</h1>
+
+    <p>
+      Professional auto detailing that restores shine, removes grime, and protects your vehicle—
+      without dealership pricing.
+    </p>
+
+    <a href="#contact" class="btn">Get Instant Quote</a>
+
+  </div>
 </section>
 
-<section id="services">
-<div class="container">
-<div class="section-title">
-<h2>Our Services</h2>
+<!-- TRUST -->
+<div class="trust">
+  <div class="container trust-grid">
+    <div>✔ Local & Reliable Service</div>
+    <div>✔ Premium Interior + Exterior Detail</div>
+    <div>✔ Satisfaction Focused Work</div>
+  </div>
 </div>
-<div class="cards">
-<div class="card">
-<h3>Exterior Detail</h3>
-<div class="price">$79+</div>
-<ul>
-<li>Hand Wash</li>
-<li>Wheel Cleaning</li>
-<li>Tire Dressing</li>
-<li>Spray Wax</li>
-</ul>
-</div>
-<div class="card">
-<h3>Interior Detail</h3>
-<div class="price">$99+</div>
-<ul>
-<li>Vacuum</li>
-<li>Dash Cleaning</li>
-<li>Glass Cleaning</li>
-<li>Light Stain Treatment</li>
-</ul>
-</div>
-<div class="card">
-<h3>Full Detail</h3>
-<div class="price">$149+</div>
-<ul>
-<li>Interior + Exterior</li>
-<li>Deep Cleaning</li>
-<li>Paint Protection</li>
-<li>Most Popular</li>
-</ul>
-</div>
-</div>
-</div>
+
+<!-- SERVICES FUNNEL -->
+<section>
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Choose Your Detail Level</h2>
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Basic Refresh</h3>
+        <div class="price">$79+</div>
+        <p>Quick exterior clean and interior reset.</p>
+      </div>
+
+      <div class="card highlight">
+        <h3>Most Popular</h3>
+        <div class="price">$129+</div>
+        <p>Deep interior + exterior clean with shine restoration.</p>
+      </div>
+
+      <div class="card">
+        <h3>Full Restoration</h3>
+        <div class="price">$179+</div>
+        <p>Maximum detail: deep clean + protection + polish.</p>
+      </div>
+
+    </div>
+  </div>
 </section>
 
-<section id="gallery">
-<div class="container">
-<div class="section-title">
-<h2>Before & After Results</h2>
-</div>
-<div class="gallery">
-<div>Add Photo</div>
-<div>Add Photo</div>
-<div>Add Photo</div>
-<div>Add Photo</div>
-<div>Add Photo</div>
-<div>Add Photo</div>
-</div>
-</div>
-</section>
-
+<!-- SOCIAL PROOF -->
 <section class="testimonials">
-<div class="container">
-<div class="section-title">
-<h2>Customer Reviews</h2>
-</div>
-<div class="cards">
-<div class="testimonial">★★★★★<br><br>My truck looked brand new.</div>
-<div class="testimonial">★★★★★<br><br>Excellent communication and results.</div>
-<div class="testimonial">★★★★★<br><br>Best value detailing service around.</div>
-</div>
-</div>
+  <div class="container">
+
+    <div class="section-title">
+      <h2>What Customers Say</h2>
+    </div>
+
+    <div class="cards">
+
+      <div class="review">
+        “My car looked better than when I bought it.”
+      </div>
+
+      <div class="review">
+        “Fast, professional, and way better than expected.”
+      </div>
+
+      <div class="review">
+        “Worth every dollar.”
+      </div>
+
+    </div>
+
+  </div>
 </section>
 
+<!-- CONVERSION FORM -->
 <section id="contact">
-<div class="container">
-<div class="section-title">
-<h2>Request a Quote</h2>
-</div>
-<div class="contact">
-<form>
-<input placeholder="Name">
-<input placeholder="Phone">
-<select><option>Vehicle Type</option><option>Car</option><option>SUV</option><option>Truck</option></select>
-<textarea placeholder="Tell us about your vehicle"></textarea>
-<button type="submit">Request Quote</button>
-</form>
-<div>
-<h3>Contact Information</h3>
-<p><br>Phone: (555) 555-5555</p>
-<p>Email: hello@summitshine.com</p>
-<p>Hours: Monday–Saturday, 8am–6pm</p>
-</div>
-</div>
-</div>
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Get Your Free Quote</h2>
+    </div>
+
+    <div class="contact">
+
+      <div>
+        <h3>Tell us about your vehicle</h3>
+        <p style="color:#cbd5e1;margin-bottom:15px;">
+          We’ll respond with pricing and availability.
+        </p>
+      </div>
+
+      <form>
+        <input placeholder="Name">
+        <input placeholder="Phone">
+        <select>
+          <option>Vehicle Type</option>
+          <option>Car</option>
+          <option>SUV</option>
+          <option>Truck</option>
+        </select>
+        <textarea placeholder="What does your vehicle need?"></textarea>
+        <button type="submit">Request Quote</button>
+      </form>
+
+    </div>
+  </div>
 </section>
 
 <footer>
-<img src="logo.png" class="footer-logo" alt="Summit Shine">
-<p>Professional Mobile Auto Detailing</p>
-<p>© 2026 Summit Shine Mobile Detailing</p>
+  <img src="images/logo.svg" style="height:50px;margin-bottom:10px;">
+  <p>Summit Shine Auto Detailing</p>
 </footer>
 
-<a href="tel:5555555555" class="floating-call">📞</a>
-
-<input type='hidden' name='ntsp_block_page' value='https://block.canopy.us/?a=block/block1&level=-30&url=http%3A%2F%2Fchatgpt.com%2Fbackend-api%2Festuary%2Fcontent%3Fid%3Dfile_00000000992071fd803d537967dd73ee%26fn%3Dindex.html%26cd%3Dattachment%26ts%3D494566%26p%3Dfs%26cid%3D1%26sig%3Da601890465603f4e6b2a5ca8d0d4387d6700fdd8fb8ea911a03a1f21b082d522%26v%3D0&user_id=1359637&sigid=1f2b2878c2c30f7f9c6cf02ba797f81b86a088b28b3ebf2c5852579e064f0c2a&startm=0&keyword=&referer=https%3A%2F%2Fchatgpt.com%2Fc%2F6a1f52d4-8388-83e8-98e4-e6d7a109b671&category=24&cause=Quiltingjs'/><input type='hidden' name='ntsp_is_etrog' value='0'/><input type='hidden' name='ntsp_url_category' value='24'/><input type='hidden' name='ntsp_quilting' value='3'/><input type='hidden' name='ntsp_media_level' value='-30'/><input type='hidden' name='ntsp_user_level' value='-30'/><input type='hidden' name='ntsp_url_level' value='20'/><input type='hidden' name='ntsp_block_wa_status' value='0'/><script src='/jsQuilting/server/jsDict_utf8.js?v=1&k=23898278c1850f536d688db3614128a0' type='text/javascript' defer></script></body>
+</body>
 </html>

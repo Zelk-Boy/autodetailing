@@ -287,18 +287,27 @@ footer{
         </p>
       </div>
 
-      <form>
-        <input placeholder="Name">
-        <input placeholder="Phone">
-        <select>
-          <option>Vehicle Type</option>
-          <option>Car</option>
-          <option>SUV</option>
-          <option>Truck</option>
-        </select>
-        <textarea placeholder="What does your vehicle need?"></textarea>
-        <button type="submit">Request Quote</button>
-      </form>
+       <form
+  action="https://formspree.io/f/xgobeowo"
+  method="POST"
+>
+  <label>
+    Name
+    <input type="text" name="name" required>
+  </label>
+
+  <label>
+    Email
+    <input type="email" name="email" required>
+  </label>
+
+  <label>
+    Message
+    <textarea name="message" required></textarea>
+  </label>
+
+  <button type="submit">Send</button>
+</form>
 
     </div>
   </div>

@@ -307,12 +307,39 @@ footer{
     Email
     <input type="email" name="email" required>
   </label>
+  <option value="Compact Car">Compact Car</option>
+<option value="Mid-Size Car">Mid-Size Car</option>
+<option value="Full-Size Car">Full-Size Car</option>
+<option value="Small SUV">Small SUV</option>
+<option value="Large SUV">Large SUV</option>
+<option value="Pickup Truck">Pickup Truck</option>
+<option value="Van">Van</option>
+<option value="Motorcycle">Motorcycle</option>
+   <label>
+  Year
+  <select id="year" name="year" required>
+    <option value="">Select Year</option>
+  </select>
+</label>
 
+<label>
+  Make
+  <select id="make" name="make" required disabled>
+    <option value="">Select Make</option>
+  </select>
+</label>
+
+<label>
+  Model
+  <select id="model" name="model" required disabled>
+    <option value="">Select Model</option>
+  </select>
+</label>
   <label>
     Message
     <textarea name="message" required></textarea>
   </label>
-
+ 
   <button type="submit">Send</button>
 </form>
 
@@ -324,6 +351,75 @@ footer{
   <img src="logo.png" style="height:50px;margin-bottom:10px;">
   <p>Summit Shine Auto Detailing</p>
 </footer>
+<script>
+const vehicleData = {
+  Ford: ["F-150", "Explorer", "Escape", "Mustang", "Bronco", "Bronco Sport", "Mustang Mach-E", "Expedition", "Maverick", "Ranger", "F-150 Lightning", "Super Duty", "GT", "Transit", "E-Transit", "E-Series", "Puma", "Kuga", "Focus", "Capri", "Tourneo", "Mondeo", "Equator", "Everest", "Model T", "Model A", "Model B", "Thunderbird", "Fairlane", "Galaxie", "Falcon", "Pinto", "Taurus", "Crown Victoria", "Fiesta", "Fusion", "Flex", "Edge", "EcoSport", "Excursion"],
+  Chevrolet: ["Silverado", "Equinox", "Malibu", "Tahoe", "Suburban", "Colorado", "Trax", "Trailblazer", "Blazer", "Corvette", "Camaro", "Bolt EV", "Cruze", "Impala"],
+  Toyota: ["Corolla", "Camry", "RAV4", "Highlander", "Prius", "Tacoma", "Tundra", "4Runner", "Sequoia", "Sienna", "Supra", "GR86", "Crown", "Land Cruiser", "bZ4X"],
+  Honda: ["Civic", "Accord", "CR-V", "Pilot", "HR-V", "Passport", "Ridgeline", "Odyssey", "Prologue", "Fit", "Element", "S2000"],
+  Nissan: ["Altima", "Sentra", "Rogue", "Pathfinder", "Frontier", "Titan", "Murano", "Kicks", "Armada", "LEAF", "Ariya", "Maxima", "370Z", "GT-R"],
+  Hyundai: ["Elantra", "Sonata", "Tucson", "Santa Fe", "Palisade", "Kona", "Santa Cruz", "IONIQ 5", "IONIQ 6", "Venue", "Accent", "Genesis"],
+  Kia: ["Sorento", "Sportage", "Telluride", "Optima", "K5", "Forte", "Soul", "Seltos", "Carnival", "EV6", "EV9", "Stinger", "Rio"],
+  Volkswagen: ["Jetta", "Golf", "GTI", "Tiguan", "Atlas", "Taos", "ID.4", "ID.Buzz", "Passat", "Beetle", "Touareg"],
+  Subaru: ["Outback", "Forester", "Crosstrek", "Impreza", "Legacy", "Ascent", "WRX", "BRZ", "Solterra", "Baja"],
+  Jeep: ["Grand Cherokee", "Wrangler", "Cherokee", "Compass", "Renegade", "Gladiator", "Wagoneer", "Grand Wagoneer", "Liberty"],
+  BMW: ["3 Series", "5 Series", "7 Series", "X3", "X5", "X7", "M3", "M5", "i4", "iX", "Z4"],
+  Mercedes-Benz: ["C-Class", "E-Class", "S-Class", "GLC", "GLE", "GLS", "G-Class", "AMG GT", "EQE", "EQS"],
+  Tesla: ["Model 3", "Model Y", "Model S", "Model X", "Cybertruck", "Roadster"],
+  Audi: ["A4", "A6", "A8", "Q3", "Q5", "Q7", "Q8", "e-tron", "R8", "TT"],
+  Other: ["Other"]
+};
 
+const yearSelect = document.getElementById("year");
+const makeSelect = document.getElementById("make");
+const modelSelect = document.getElementById("model");
+
+// Populate years
+const currentYear = new Date().getFullYear();
+
+for (let year = currentYear; year >= 1990; year--) {
+  const option = document.createElement("option");
+  option.value = year;
+  option.textContent = year;
+  yearSelect.appendChild(option);
+}
+
+// When year selected, enable makes
+yearSelect.addEventListener("change", () => {
+
+  makeSelect.disabled = false;
+
+  makeSelect.innerHTML =
+    '<option value="">Select Make</option>';
+
+  modelSelect.innerHTML =
+    '<option value="">Select Model</option>';
+
+  modelSelect.disabled = true;
+
+  Object.keys(vehicleData).forEach(make => {
+    const option = document.createElement("option");
+    option.value = make;
+    option.textContent = make;
+    makeSelect.appendChild(option);
+  });
+});
+
+// When make selected, show models
+makeSelect.addEventListener("change", () => {
+
+  modelSelect.disabled = false;
+
+  modelSelect.innerHTML =
+    '<option value="">Select Model</option>';
+
+  vehicleData[makeSelect.value].forEach(model => {
+    const option = document.createElement("option");
+    option.value = model;
+    option.textContent = model;
+    modelSelect.appendChild(option);
+  });
+});
+</script>
 </body>
 </html>

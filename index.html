@@ -307,24 +307,20 @@ footer{
     Email
     <input type="email" name="email" required>
   </label>
-<label>
-  Vehicle Type
-  <select id="vehicleType" name="vehicle_type">
-    <option value="">Select Vehicle Type</option>
-    <option value="Sedan">Sedan</option>
-    <option value="SUV">SUV</option>
-    <option value="Truck">Truck</option>
-    <option value="Van">Van</option>
-    <option value="Coupe">Coupe</option>
-    <option value="Other">Other</option>
-  </select>
-</label>
+
    <label>
   Year
-  <select id="year" name="year" required>
-    <option value="">Select Year</option>
-  </select>
+  <input
+    type="number"
+    name="year"
+    placeholder="e.g. 2020"
+    min="1900"
+    max="2099"
+    inputmode="numeric"
+    required
+  >
 </label>
+         
 
 <label>
   Make & Model
@@ -490,6 +486,25 @@ footer{
   <option value="Other">
 
 </datalist>
+         <label>
+  Vehicle Condition
+  <textarea
+    name="vehicle_condition"
+    placeholder="Describe condition (dirt level, stains, pet hair, smoke smell, etc.)"
+    rows="3"
+    required
+  ></textarea>
+</label>
+
+<label>
+  What service are you looking for?
+  <textarea
+    name="service_request"
+    placeholder="Basic wash, full detail, interior deep clean, ceramic coating, etc."
+    rows="3"
+    required
+  ></textarea>
+</label>
   <label>
     Message
     <textarea name="message" required></textarea>

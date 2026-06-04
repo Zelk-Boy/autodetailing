@@ -307,14 +307,18 @@ footer{
     Email
     <input type="email" name="email" required>
   </label>
-  <option value="Compact Car">Compact Car</option>
-<option value="Mid-Size Car">Mid-Size Car</option>
-<option value="Full-Size Car">Full-Size Car</option>
-<option value="Small SUV">Small SUV</option>
-<option value="Large SUV">Large SUV</option>
-<option value="Pickup Truck">Pickup Truck</option>
-<option value="Van">Van</option>
-<option value="Motorcycle">Motorcycle</option>
+<label>
+  Vehicle Type
+  <select id="vehicleType" name="vehicle_type">
+    <option value="">Select Vehicle Type</option>
+    <option value="Sedan">Sedan</option>
+    <option value="SUV">SUV</option>
+    <option value="Truck">Truck</option>
+    <option value="Van">Van</option>
+    <option value="Coupe">Coupe</option>
+    <option value="Other">Other</option>
+  </select>
+</label>
    <label>
   Year
   <select id="year" name="year" required>
